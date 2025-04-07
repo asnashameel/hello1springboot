@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2025-04-07T09:29:24Z"
+  labels:
+    app: hello1springboot
+  name: hello1springboot
+  namespace: default
+  resourceVersion: "148684"
+  uid: 405cb4e0-4224-4d65-942b-ef3c62269478
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.106.225.151
+  clusterIPs:
+  - 10.106.225.151
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30901
+    port: 8001
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: hello1springboot
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
